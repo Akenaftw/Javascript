@@ -8,9 +8,17 @@
 
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
+document.getElementById("run").addEventListener("click" , calculateage());
 
-(function() {
-
-    // your code here
-
-})();
+function calculateage() {
+    let day = document.getElementById("dob-day").value;
+    console.log(day)
+    let month = document.getElementById("dob-month").value;
+    let year = document.getElementById("dob-year").value;
+    let today = new Date();
+    let age = today.getFullYear() - year;
+    if (today.getMonth() < month || (today.getMonth() == month && today.getDate() < day)) {
+        age--;
+    }
+    alert(age)
+}

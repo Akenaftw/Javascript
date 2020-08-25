@@ -9,8 +9,22 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
-
-    // your code here
-
-})();
+// (function () {
+//
+//     document.getElementById("run").addEventListener("click", function () {
+//         document.body.style.backgroundColor = randomNumber();
+//     })
+//
+//
+// })();
+setInterval(function(){ document.body.style.backgroundColor = randomNumber(); }, 3);
+function randomNumber() {
+    let returnstring = "rgb(";
+    for (i = 0; i <= 2; i++) {
+        returnstring += Math.floor(Math.random() * (Math.floor(255)));
+        if (i !== 2){returnstring += ", ";
+        }
+    }
+    returnstring += ")";
+    return returnstring;
+}

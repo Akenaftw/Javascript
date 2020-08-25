@@ -10,9 +10,14 @@
 // You will have time to focus on it later.
 
 (function() {
+    let now = new Date();
+    let hours = now.getHours();
+    //setInterval(function(){document.getElementById("target").innerHTML= new Date().toTimeString();}, 3);
+    if (18 <= hours){
+        document.getElementById("target").innerHTML="Evening!";
+    }
+    else{
+        document.getElementById("target").innerHTML="Hello!";
 
-    // to change the content of a tag: document.getElementById("element-id").innerHTML = "new-value"
-
-    // your code here
-
+    }
 })();
