@@ -9,8 +9,11 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+var person = prompt("Please enter your name", "Harry Potter");
 
-    // your code here
-
-})();
+if (person == null || person == "") {
+    txt = "User cancelled the prompt.";
+} else {
+    alert ("Hello " + person + "! How are you today?");
+}
+// your code here

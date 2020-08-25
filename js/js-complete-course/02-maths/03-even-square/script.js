@@ -9,12 +9,19 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+    document.getElementById("run").addEventListener("click", sqrt);
+})()
 
-    document.getElementById("run").addEventListener("click", function() {
+function sqrt(){
+    let n = "21";
+    let msg = "";
+    let res = "0";
 
-        // your code here
+    for (let x = 1; x <= n; x++) {
+        res = x * x;
+        msg = msg + " " + x + " * " + x + " = " + res + "\n";
+    }
 
-    });
-
-})();
+    alert(msg);
+}

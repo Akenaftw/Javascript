@@ -9,22 +9,33 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function(){
     // to get the value of an input: document.getElementById("element-id").value
 
     document.getElementById("addition").addEventListener("click", function() {
-        // perform an addition
+        let one = parseInt(document.getElementById("op-one").value);
+        let two = parseInt(document.getElementById("op-two").value);
+        alert(one + two);
     });
 
     document.getElementById("substraction").addEventListener("click", function() {
-        // perform an substraction
+        // perform a substraction
+        let one = parseInt(document.getElementById("op-one").value);
+        let two = parseInt(document.getElementById("op-two").value);
+        alert(one - two);
     });
 
     document.getElementById("multiplication").addEventListener("click", function() {
-        // perform an multiplication
+        // perform a multiplication
+        let one = parseInt(document.getElementById("op-one").value);
+        let two = parseInt(document.getElementById("op-two").value);
+        alert(one * two);
     });
 
     document.getElementById("division").addEventListener("click", function() {
         // perform an division
+        let one = parseInt(document.getElementById("op-one").value);
+        let two = parseInt(document.getElementById("op-two").value);
+        alert(one / two);
     });
 })();

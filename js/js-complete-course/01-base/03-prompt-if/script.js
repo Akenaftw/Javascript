@@ -10,7 +10,17 @@
 // You will have time to focus on it later.
 
 (function() {
+   let cake=prompt("Do you want cake?", "yes or no?")
+ if (cake == "yes") {
+     alert("Enjoy your cake!")
+ }
+ else {
+     alert("Moar for me!")
+ }
 
-  // your code here
+
+    // your code here
 
 })();
+
+    // your code here
