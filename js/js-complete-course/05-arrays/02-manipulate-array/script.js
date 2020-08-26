@@ -8,10 +8,11 @@
 
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
-
+//When you click the button, do the following transformations to the array fruits: remove the first and the last element, add an element "banana"
+//at the start of the array, and add an element "kiwi" at the end.
 (function() {
 
-    var fruits = [
+    let fruits = [
         "pomme",
         "poire",
         "fraise",
@@ -23,7 +24,11 @@
         "raisin",
         "cerise",
     ];
-
-    // your code here
-
+    document.querySelector("button").onclick = function() {
+        fruits.pop();
+        fruits.shift();
+        fruits.unshift("banana");
+        fruits.push("kiwi");
+    }
+console.log(fruits)
 })();
