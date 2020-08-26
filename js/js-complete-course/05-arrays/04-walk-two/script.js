@@ -9,7 +9,7 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
 
     var fruits = [
         "pomme",
@@ -25,7 +25,12 @@
         "raisin",
         "cerise",
     ];
+    document.querySelector("button").onclick = function () {
+        fruits.forEach(myFunction)
 
-    // your code here
+        function myFunction(item, index) {
+            console.log(index + ":" + item);
+        }
+    }
 
 })();
