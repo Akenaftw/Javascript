@@ -88,17 +88,20 @@
                 age: 81,
             },
         ];
+
         var adult = []
-
-        function search(nameKey, people) {
+        function search(age, people) {
             for (var i = 0; i < people.length; i++) {
-                if (people[i].age > 18) {
-                    adult.push(people[i]);
+                if (people[i].age >= age) {
+                     adult.push(people[i]);
                 }
-            }
-            console.log(adult);
-        }
 
+            }
+
+
+        }
+        search(18, people)
+        console.log(adult);
 
     }
 })();
