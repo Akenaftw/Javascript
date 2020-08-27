@@ -9,7 +9,7 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
 
     var people = [
         {
@@ -39,6 +39,7 @@
         },
     ];
 
-    // your code here
-
+    document.querySelector("button").onclick = function () {
+        people.forEach(person => console.log(person.firstname, person.lastname));
+    }
 })();
