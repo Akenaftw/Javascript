@@ -9,23 +9,31 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+    document.querySelector("button").onclick = function () {
+        var fruits = [
+            "apple",
+            "perry",
+            "strawberry",
+            "tomato",
+            "kiwi",
+            "banana",
+            "orange",
+            "mandarin",
+            "durian",
+            "peach",
+            "grapes",
+            "cherry",
+        ];
+        var found = false;
+        for (var i = 0; i < fruits.length; i++) {
+            if (fruits[i] == "apple") {
+               // found = true;
+                console.log("found apple")
+            }
+            //console.log(found)
+        }
 
-    var fruits = [
-        "apple",
-        "perry",
-        "strawberry",
-        "tomato",
-        "kiwi",
-        "banana",
-        "orange",
-        "mandarin",
-        "durian",
-        "peach",
-        "grapes",
-        "cherry",
-    ];
-
-    // your code here
-
+//When you click the button, log in the console if, yes or no, there is an apple in the array fruits.
+    }
 })();
