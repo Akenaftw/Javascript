@@ -89,6 +89,7 @@
         },
     ];
 
-    // your code here
+    let arrSum = people.reduce((a, b) => a + b.age, 0);
+    console.log(arrSum)
 
 })();
