@@ -31,7 +31,7 @@
                // found = true;
                 console.log("found apple")
             }
-            //console.log(found)
+
         }
 
 //When you click the button, log in the console if, yes or no, there is an apple in the array fruits.
