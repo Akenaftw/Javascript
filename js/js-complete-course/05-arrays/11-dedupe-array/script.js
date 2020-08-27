@@ -28,6 +28,9 @@
         "cerise",
     ];
 
-    // your code here
+    var uniquefruits = fruits.filter((c, index)=>{
+        return fruits.indexOf(c) === index;
+    });
+    console.log(uniquefruits)
 
 })();
