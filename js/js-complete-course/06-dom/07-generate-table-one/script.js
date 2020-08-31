@@ -10,7 +10,20 @@
 // You will have time to focus on it later.
 
 (function() {
+    var target = document.getElementById("target");
+    var table = document.createElement("table");
+    var totalrows = 25;
+    var totalcol = 2;
 
-    // your code here
+    for (var r = 0; r < totalrows; r++) {
+        var row = document.createElement("tr");
+        row.innerHTML = r;
 
+        for (var c = 0; c < totalcol; c++) {
+            var collumn = document.createElement("td");
+            row.appendChild(collumn);
+        }
+        table.appendChild(row);
+    }
+    target.appendChild(table);
 })();
