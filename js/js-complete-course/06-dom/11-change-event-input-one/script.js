@@ -11,6 +11,28 @@
 
 (function() {
 
-    // your code here
+    let input;
+    checkInput();
+
+    function strLength(value){
+        let maxLength = 10;
+        if(value.length > maxLength) return false;
+        return true;
+    }
+
+    function counter(value){
+        let i = value.length;
+        document.getElementById("counter").innerHTML = i + "/10";
+    }
+    input.onkeyup = function() {
+
+        if (strLength(this.value)) input.value = input.value.substr(0, 10);
+        counter(this.value);
+    }
+
+    function checkInput(){
+        input = document.getElementById("pass-one");
+    }
+
 
 })();
