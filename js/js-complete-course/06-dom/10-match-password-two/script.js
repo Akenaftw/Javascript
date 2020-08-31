@@ -10,7 +10,21 @@
 // You will have time to focus on it later.
 
 (function() {
+    document.getElementById("run").addEventListener("click", function () {
+        var password1 = document.getElementById("pass-one");
+        var password2 = document.getElementById("pass-two");
 
-    // your code here
+        if (password1.value === password2.value)
+        {
+            alert("Password succesfully set.");
+        }
+        else {
+            password1.style.border = "2px solid red";
+            password2.style.border = "2px solid red";
+            password1.classList.add("error");
+            password2.classList.add("error");
+        }
+
+    })
 
 })();
