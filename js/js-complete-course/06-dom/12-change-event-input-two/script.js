@@ -1,4 +1,4 @@
-/* becode/javascript
+    /* becode/javascript
  *
  * /06-dom/12-change-event-input-two/script.js - 6.12: événement change (2)
  *
@@ -11,6 +11,17 @@
 
 (function() {
 
-    // your code here
+    function changeEvent (e) {
+        let x = document.getElementById('pass-one').value
+        if (x.match(/[0-9]{2}/) && x.length >= 8)
+            document.getElementById("validity").innerHTML = "Ok"
+
+        else {
+            document.getElementById("validity").innerHTML = "Not ok"
+        }
+    }
+
+    document.getElementById("pass-one").addEventListener("keyup", changeEvent);
+
 
 })();
