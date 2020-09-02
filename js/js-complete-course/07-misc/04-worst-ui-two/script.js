@@ -10,53 +10,52 @@
 // You will have time to focus on it later.
 
 (function () {
-    let buttonOne = document.getElementById("part-one");
-    let buttonTwo = document.getElementById("part-two");
-    let buttonThree = document.getElementById("part-three");
-    let buttonFour = document.getElementById("part-four");
-    let value = 0;
+        let buttonOne = document.getElementById("part-one");
+        let buttonTwo = document.getElementById("part-two");
+        let buttonThree = document.getElementById("part-three");
+        let buttonFour = document.getElementById("part-four");
+        let value = 0;
 
-    function update() {
-        document.getElementById("target").innerHTML = "0" + buttonOne.innerHTML + buttonTwo.innerHTML + buttonThree.innerHTML + buttonFour.innerHTML;
-    }
-
-    buttonOne.onclick = function () {
-        value = parseInt(buttonOne.innerHTML);
-        if (value < buttonOne.dataset.max) {
-            value++;
-            buttonOne.innerHTML = value;
-        } else {
-            buttonOne.innerHTML = buttonOne.dataset.min;
+        function update() {
+            document.getElementById("target").innerHTML = "0" + buttonOne.innerHTML + buttonTwo.innerHTML + buttonThree.innerHTML + buttonFour.innerHTML;
         }
-        update()
-    }
 
-    buttonTwo.onclick = function () {
-        value = parseInt(buttonTwo.innerHTML);
-        if (value < buttonTwo.dataset.max) {
-            value++;
-            if (value < 10) {
-                buttonTwo.innerHTML = "0" + value
+        buttonOne.onclick = function () {
+            value = parseInt(buttonOne.innerHTML);
+            if (value < buttonOne.dataset.max) {
+                value++;
+                buttonOne.innerHTML = value;
             } else {
-                value = value
+                buttonOne.innerHTML = buttonOne.dataset.min;
             }
-        } else {
-            buttonTwo.innerHTML = buttonTwo.dataset.min;
+            update()
         }
-        update()
-    }
 
-    buttonThree.onclick = function () {
-        value = parseInt(buttonThree.innerHTML);
-        if (value < buttonThree.dataset.max) {
-            value++;
-            if (value < 10) {
-                buttonThree.innerHTML = "0" + value
+        buttonTwo.onclick = function () {
+            value = parseInt(buttonTwo.innerHTML);
+            if (value < buttonTwo.dataset.max) {
+                value++;
+                if(value < 10)
+                {
+                    value = "0" + value
+                }
+                buttonTwo.innerHTML = value;
             } else {
-                value = value
-            }}
-        else
-            {
+                buttonTwo.innerHTML = buttonTwo.dataset.min;
+            }
+            update()
+        }
+
+        buttonThree.onclick = function () {
+            value = parseInt(buttonThree.innerHTML);
+            if (value < buttonThree.dataset.max) {
+                value++;
+                if(value < 10)
+                {
+                    value = "0" + value
+                }
+                buttonThree.innerHTML = value;
+            } else {
                 buttonThree.innerHTML = buttonThree.dataset.min;
             }
             update()
@@ -67,17 +66,15 @@
             if (value < buttonFour.dataset.max) {
                 value++;
                 if (value < 10) {
-                    buttonFour.innerHTML = "0" + value
-                } else {
-                    value = value
-                }}
-            else
-                {
-                    buttonFour.innerHTML = buttonFour.dataset.min;
+                    value = "0" + value
                 }
-                update()
+                buttonFour.innerHTML = value;
+            } else {
+                buttonFour.innerHTML = buttonFour.dataset.min;
             }
-
-
+            update()
         }
-    )();
+
+
+    }
+)();
