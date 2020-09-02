@@ -10,7 +10,12 @@
 // You will have time to focus on it later.
 
 (function() {
-
-    // your code here
+let slider = document.getElementById("slider")
+let target = document.getElementById("target");
+    slider.onchange = function () {
+    let value = document.getElementById("slider").value;
+    target.innerHTML = "0" + value
+    console.log(target)
+}
 
 })();
