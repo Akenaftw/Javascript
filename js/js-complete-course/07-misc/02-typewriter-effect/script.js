@@ -8,9 +8,18 @@
 
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
-
 (function() {
 
-    // your code here
+    let text = "Vat is de vat?";
+    let chars = text.split('');
+    let target = document.getElementById("target");
+    target.innerHTML = " ";
 
+    function typing (index){
+        if (index < chars.length){
+            target.append(chars[index++]);
+            setTimeout(function () {typing(index);}, 200);
+        }
+    }
+    typing(0);
 })();
