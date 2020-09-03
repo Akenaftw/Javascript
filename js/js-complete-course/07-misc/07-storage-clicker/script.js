@@ -9,8 +9,21 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
+
 (function() {
+    var total = parseInt(localStorage.getItem("total"));
+    let addition = document.getElementById("increment");
 
-    // your code here
+    function update(){
+        document.getElementById("target").innerHTML = total
+    }
 
+    addition.onclick = function(){
+        total = total +1;
+        update();
+    }
+    window.onbeforeunload = function (){
+        localStorage.setItem("total", total)
+    }
 })();
+
