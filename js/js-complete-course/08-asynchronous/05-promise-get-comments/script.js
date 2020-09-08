@@ -9,6 +9,16 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(() => {
-    // your code here
-})();
+document.getElementById("run").addEventListener("click", () => {
+    let posters = (resolve) => resolve.forEach((post) => {
+        let comment = (resolve) => {post.comment = resolve[post.id].content
+            console.log(post)}
+        window.lib.getComments(post.id).then(comment)
+
+
+    })
+    window.lib.getPosts().then(posters)
+})
+
+
+})
