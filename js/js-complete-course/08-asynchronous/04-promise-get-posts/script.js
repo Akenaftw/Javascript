@@ -9,6 +9,14 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(() => {
-    // your code here
-})();
+document.getElementById("run").addEventListener("click", getPosts);
+function getPosts() {
+    window.lib.getPosts(function (result, error) {
+        if (result) {
+            console.log(result)
+        } else (error)
+        {
+            console.error(error);
+        }
+    })
+}
