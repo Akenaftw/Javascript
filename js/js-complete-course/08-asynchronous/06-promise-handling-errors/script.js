@@ -9,6 +9,9 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(() => {
-    // your code here
-})();
+document.getElementById("run").addEventListener("click", () => {
+    let persons = (resolve) => console.log(resolve)
+    let errorPersons = (error) => console.error("shit done broke" + error)
+    window.lib.getPersons().then(persons).catch(errorPersons)
+    })
+
