@@ -10,5 +10,30 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    var target = document.getElementById("target")
+    document.getElementById('run').addEventListener('click', function (){
+        fetch("http://localhost:3000/heroes")
+            .then (function (response){
+                return response.json();
+            })
+            .then (function (data){
+                appendData(data);
+            })
+            .catch(function (err){
+                console.log("error: " + err);
+            })
+    });
+    function appendData(data){
+        var target = document.getElementById("target");
+        var HeroId = document.getElementById("hero-id").value;
+
+
+        {
+            var div = document.createElement("div");
+            div.innerHTML = "Name: " + data[HeroId].name + " " + data[HeroId].alterEgo;
+            target.innerHTML = "";
+            target.appendChild(div);
+        }
+    }
+    /* will review this exercise and add the node.cloneNode method */
 })();
