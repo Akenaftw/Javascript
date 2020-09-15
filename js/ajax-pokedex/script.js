@@ -19,7 +19,7 @@ async function pokeFind() {
         .then( data => {
             console.log(data);
             pokemon.name = data.name;
-            pokemon.type = data.types[1].typ;
+            pokemon.type = data.types[0].type.name;
             pokemon.id = data.id;
             pokemon.pokeFront = data.sprites["front_default"];
             pokemon.pokeShiny = data.sprites["front_shiny"];
