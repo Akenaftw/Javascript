@@ -1,28 +1,44 @@
-let api = "hhtps://pokeapi.co/api/v2/pokemon/"
-let ID
+let api = "https://pokeapi.co/api/v2/pokemon/"
 document.getElementById("trigger").addEventListener("click", pokeFind)
+var pokemon= {
+    name: "",
+    type: [],
+    id : "",
+    pokeFront: "",
+    pokeShiny:"",
+    moves: [],
 
-function pokeFind() {
-    fetch(api)
+}
+
+
+async function pokeFind() {
+
+    let pokemonID = document.getElementById("ID").value
+    fetch(api + pokemonID)
         .then((res) => res.json())
-        .then(data => {
+        .then( data => {
             console.log(data);
+            pokemon.name = data.name;
+            pokemon.type = data.types[1].typ;
+            pokemon.id = data.id;
+            pokemon.pokeFront = data.sprites["front_default"];
+            pokemon.pokeShiny = data.sprites["front_shiny"];
+            pokemon.moves = data.moves[0].move.name;
+            console.log(pokemon)
+            showPokemon()
         })
-    console.log(pokeName)
         .catch(function (error) {
             console.log("404 pokemon not found")
         })
-    let pokeData = data.pokemon;
-    let pokeName = document.getElementById(ID).value
-    let pokeSearch = pokeData + pokeName
 
+}
 
-    fetch(pokeSearch)
-        .then ((res) => res.json())
-    .then (data => {
-            console.log(data.id)
-    })
-
-
+function showPokemon(){
+    document.getElementById("name").innerHTML = pokemon.name;
+    document.getElementById("type").innerHTML = pokemon.type;
+    document.getElementById("pokeId").innerHTML = pokemon.id;
+    document.getElementById("pokeFront").innerHTML = "<img src=" + pokemon.pokeFront +">";
+    document.getElementById("pokeShiny").innerHTML = "<img src =" + pokemon.pokeShiny +">"
+    document.getElementById("moves").innerHTML = pokemon.moves;
 }
 
