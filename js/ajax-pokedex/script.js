@@ -23,7 +23,7 @@ async function pokeFind() {
             pokemon.id = data.id;
             pokemon.pokeFront = data.sprites["front_default"];
             pokemon.pokeShiny = data.sprites["front_shiny"];
-            pokemon.moves = data.moves[0].move.name;
+            pokemon.moves = supercoolefunctienaam(data.moves)
             console.log(pokemon)
             showPokemon()
         })
@@ -40,5 +40,16 @@ function showPokemon(){
     document.getElementById("pokeFront").innerHTML = "<img src=" + pokemon.pokeFront +">";
     document.getElementById("pokeShiny").innerHTML = "<img src =" + pokemon.pokeShiny +">"
     document.getElementById("moves").innerHTML = pokemon.moves;
+}
+
+function supercoolefunctienaam(allMoves){
+    let movenames = "";
+    let minvalue = 0;
+    let maxvalue = allMoves.length;
+    for (i = 0; i < 4; i++){
+        let rand = Math.floor((Math.random() * maxvalue) + minvalue);
+        movenames += allMoves[rand].move.name +", ";
+    }
+    return movenames;
 }
 
